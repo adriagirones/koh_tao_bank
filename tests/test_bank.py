@@ -2,9 +2,9 @@ import unittest
 import bank
 
 
-class Bank(unittest.TestCase):
+class Command(unittest.TestCase):
     def test_balance(self):
-        self.assertEqual(True, False)
+        self.assertEqual(bank.Command.execute(), False)
 
 
 if __name__ == '__main__':
