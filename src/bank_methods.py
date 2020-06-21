@@ -4,8 +4,6 @@ class BankMethods:
         amount += quantity
         return amount
 
-    def get_balance(self, amount):
-        return amount
 
     def get_withdraw(self, amount, quantity): # TODO: Same as deposit, this is an executing action so does not to return.
 

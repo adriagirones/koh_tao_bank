@@ -8,7 +8,7 @@ class UserBank:
         self.name = name
 
     def deposit(self, quantity):
-        self.amount = BankMethods.set_amount(self, self.amount, quantity)
+        self.amount += quantity
 
     def balance(self):
         return self.amount
