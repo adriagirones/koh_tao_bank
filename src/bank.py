@@ -1,6 +1,3 @@
-from bank_methods import BankMethods
-
-
 class UserBank:
 
     def __init__(self, name):
