@@ -1,7 +1,7 @@
 import user
 
 
-class bank:
+class bank:  # TODO: Clear bank class (this should be CamelCase named)
     pass
 
 
