@@ -14,8 +14,8 @@ class UserBank:
         return self.amount
 
     def withdraw(self, quantity):
-        self.amount, withdraw_done = BankMethods.get_withdraw(self, self.amount, quantity)
-        return withdraw_done
+        if self.amount - quantity > 0:
+            self.amount -= quantity
 
 
 if __name__ == '__main__':
