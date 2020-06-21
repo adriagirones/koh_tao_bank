@@ -1,6 +1,5 @@
 import unittest
-
-import bank
+from src import bank
 
 deposit_command = bank.Deposit("50")
 # deposit_invoker = bank.Invoker(deposit_command)
