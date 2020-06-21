@@ -8,10 +8,9 @@ class UserBank:
         self.name = name
 
     def deposit(self, quantity):
-        self.amount = BankMethods.get_deposit(self, self.amount, quantity)
+        self.amount = BankMethods.set_amount(self, self.amount, quantity)
 
     def balance(self):
-        self.amount = BankMethods.get_balance(self, self.amount)
         return self.amount
 
     def withdraw(self, quantity):
@@ -20,7 +19,7 @@ class UserBank:
 
 
 if __name__ == '__main__':
-    adria = user.UserBank('adria')
+    adria = UserBank('adria')
     print(adria.balance())
     adria.deposit(50)
     print(adria.balance())
