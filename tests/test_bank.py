@@ -1,4 +1,5 @@
 import unittest
+
 import bank
 
 
@@ -7,8 +8,13 @@ class TestCommand(unittest.TestCase):
         self.assertEqual(bank.Command.execute(self), None)
 
 
-class TestDeposit(unittest.TestCase):
+class TestInvoker(unittest.TestCase):
     def test_invoker_execute(self):
+        pass
+
+
+class TestDeposit(unittest.TestCase):
+    def test_deposit_execute(self):
         # deposit_command = bank.Deposit("50")
         # deposit_invoker = bank.Invoker(deposit_command)
         # deposit_invoker.execute()
