@@ -1,1 +1,2 @@
-# koh_tao_bank
+# Koh Tao bank project
+
