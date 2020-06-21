@@ -1,10 +1,5 @@
 import user
 
-
-class bank:  # TODO: Clear bank class (this should be CamelCase named)
-    pass
-
-
 if __name__ == '__main__':
     adria = user.UserBank('adria')
     print(adria.balance())
@@ -14,4 +9,3 @@ if __name__ == '__main__':
     print(adria.balance())
     print(adria.withdraw(100))
     print(adria.balance())
-

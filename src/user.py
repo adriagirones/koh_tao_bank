@@ -1,5 +1,6 @@
 from bank_methods import BankMethods
 
+
 # TODO: Move this to the bank.py file and delete user.py
 
 class UserBank:
