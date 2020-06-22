@@ -4,13 +4,16 @@ import bank
 
 
 class TestCommand(unittest.TestCase):
-    def test_command_execute(self):
+    def test_command_execute_type_check(self):
         self.assertEqual(bank.Command.execute(self), None)
 
 
 class TestInvoker(unittest.TestCase):
-    def test_invoker_execute(self):
+    def test_invoker_init_command_parameter_type_check(self):
         pass
+
+    def test_invoker_run(self):
+        self.assertEqual()
 
 
 class TestDeposit(unittest.TestCase):
