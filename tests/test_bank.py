@@ -51,6 +51,10 @@ class TestWithdraw(unittest.TestCase):
     def test_withdraw_negative_amount(self):
         self.assertLessEqual(self.test_amount, 0)
 
+    def test_withdraw_argument_error(self):
+        with self.assertRaises(IOError):
+            bank.Withdraw()
+
     def tearDown(self) -> None:
         pass
 
