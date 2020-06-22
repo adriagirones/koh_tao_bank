@@ -14,17 +14,10 @@ class TestInvoker(unittest.TestCase):
         for command in commands:
             invoker = bank.Invoker(command)
             self.assertIsInstance(invoker.command, command)
+            # self.assertTrue(invoker.command is command)
 
     def test_invoker_run(self):
         self.assertIsNone(bank.Invoker.run(self))
-
-
-class TestDeposit(unittest.TestCase):
-    def test_deposit_execute(self):
-        # deposit_command = bank.Deposit("50")
-        # deposit_invoker = bank.Invoker(deposit_command)
-        # deposit_invoker.execute()
-        pass
 
 
 class TestBalance(unittest.TestCase):
@@ -32,6 +25,14 @@ class TestBalance(unittest.TestCase):
         # balance_command = bank.Balance()
         # balance_invoker = bank.Invoker(balance_command)
         # balance_invoker.execute()
+        pass
+
+
+class TestDeposit(unittest.TestCase):
+    def test_deposit_execute(self):
+        # deposit_command = bank.Deposit("50")
+        # deposit_invoker = bank.Invoker(deposit_command)
+        # deposit_invoker.execute()
         pass
 
 
