@@ -5,15 +5,18 @@ import bank
 
 class TestCommand(unittest.TestCase):
     def test_command_execute_type_check(self):
-        self.assertEqual(bank.Command.execute(self), None)
+        self.assertIsNone(bank.Command.execute(self))
 
 
 class TestInvoker(unittest.TestCase):
     def test_invoker_init_command_parameter_type_check(self):
-        pass
+        commands = [bank.Balance, bank.Deposit, bank.Withdraw]
+        for command in commands:
+            invoker = bank.Invoker(command)
+            self.assertIsInstance(invoker.command, command)
 
     def test_invoker_run(self):
-        self.assertEqual()
+        self.assertIsNone(bank.Invoker.run(self))
 
 
 class TestDeposit(unittest.TestCase):
