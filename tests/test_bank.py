@@ -36,7 +36,7 @@ class TestBalance(unittest.TestCase):
 
 class TestDeposit(unittest.TestCase):
     def test_deposit_execute(self):
-        # deposit_command = bank.Deposit("50")
+
         pass
 
 
@@ -45,6 +45,9 @@ class TestWithdraw(unittest.TestCase):
         self.balance = 20
         self.test_amount = -30
         self.app = bank.Withdraw(self.test_amount)
+
+    def test_withdraw_execute(self):
+        self.assertTrue(self.app.execute())
 
     def test_withdraw_input_is_integer(self):
         self.assertIs(self.test_amount, int)
