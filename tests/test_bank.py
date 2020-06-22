@@ -9,9 +9,11 @@ class TestCommand(unittest.TestCase):
 
 
 class TestInvoker(unittest.TestCase):
+    def setUp(self) -> None:
+        self.commands = [bank.Balance, bank.Deposit, bank.Withdraw]
+
     def test_invoker_init_command_parameter_type_check(self):
-        commands = [bank.Balance, bank.Deposit, bank.Withdraw]
-        for command in commands:
+        for command in self.commands:
             invoker = bank.Invoker(command)
             self.assertIsInstance(invoker.command, command)
             # self.assertTrue(invoker.command is command)
@@ -19,10 +21,15 @@ class TestInvoker(unittest.TestCase):
     def test_invoker_run(self):
         self.assertIsNone(bank.Invoker.run(self))
 
+    def tearDown(self) -> None:
+        pass
+
 
 class TestBalance(unittest.TestCase):
     def test_balance_execute(self):
         self.assertEqual(bank.Balance(), 0)
+
+    def test_balance_argument_error(self):
         with self.assertRaises(IOError):
             bank.Balance(150)
 
@@ -34,8 +41,17 @@ class TestDeposit(unittest.TestCase):
 
 
 class TestWithdraw(unittest.TestCase):
-    def test_withdraw_execute(self):
-        # withdraw_command = bank.Withdraw("150")
+    def setUp(self) -> None:
+        test_amount = -30
+        self.app = bank.Withdraw(test_amount)
+
+    def test_withdraw_input_is_integer(self):
+        self.assertIs(self.amount, int)
+
+    def test_withdraw_negative_amount(self):
+        self.assertLessEqual(self.amount, 0)
+
+    def tearDown(self) -> None:
         pass
 
 
