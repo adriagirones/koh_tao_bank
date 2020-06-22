@@ -22,25 +22,20 @@ class TestInvoker(unittest.TestCase):
 
 class TestBalance(unittest.TestCase):
     def test_balance_execute(self):
-        # balance_command = bank.Balance()
-        # balance_invoker = bank.Invoker(balance_command)
-        # balance_invoker.execute()
-        pass
+        self.assertEqual(bank.Balance(), 0)
+        with self.assertRaises(IOError):
+            bank.Balance(150)
 
 
 class TestDeposit(unittest.TestCase):
     def test_deposit_execute(self):
         # deposit_command = bank.Deposit("50")
-        # deposit_invoker = bank.Invoker(deposit_command)
-        # deposit_invoker.execute()
         pass
 
 
 class TestWithdraw(unittest.TestCase):
     def test_withdraw_execute(self):
         # withdraw_command = bank.Withdraw("150")
-        # withdraw_invoker = bank.Invoker(withdraw_command)
-        # withdraw_invoker.execute()
         pass
 
 
