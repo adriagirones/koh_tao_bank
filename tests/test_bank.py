@@ -46,14 +46,11 @@ class TestDeposit(unittest.TestCase):
         self.assertIs(self.test_amount, int)
 
     def test_deposit_negative_amount(self):
-        self.assertLessEqual(self.test_amount, 0)
+        self.assertLessEqual(self.test_amount * -1, 0)
 
     def test_deposit_argument_error(self):
         with self.assertRaises(IOError):
-            bank.Withdraw()
-
-    def test_deposit_amount_exceeds_balance(self):
-        self.assertLess(self.test_amount, self.balance)
+            bank.Deposit()
 
     def tearDown(self) -> None:
         pass
@@ -66,7 +63,7 @@ class TestWithdraw(unittest.TestCase):
         self.app = bank.Withdraw(self.test_amount)
 
     def test_withdraw_execute(self):
-        self.assertEquals(bank.Withdraw(self.test_amount), (self.balance - self.test_amount))
+        self.assertEquals(bank.Withdraw(self.test_amount), self.balance - self.test_amount)
 
     def test_withdraw_input_is_integer(self):
         self.assertIs(self.test_amount, int)
