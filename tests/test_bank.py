@@ -42,8 +42,9 @@ class TestDeposit(unittest.TestCase):
 
 class TestWithdraw(unittest.TestCase):
     def setUp(self) -> None:
-        test_amount = -30
-        self.app = bank.Withdraw(test_amount)
+        self.balance = 20
+        self.test_amount = -30
+        self.app = bank.Withdraw(self.test_amount)
 
     def test_withdraw_input_is_integer(self):
         self.assertIs(self.test_amount, int)
@@ -54,6 +55,9 @@ class TestWithdraw(unittest.TestCase):
     def test_withdraw_argument_error(self):
         with self.assertRaises(IOError):
             bank.Withdraw()
+
+    def test_withdraw_amount_exceeds_balance(self):
+        self.assertLess(self.test_amount, self.balance)
 
     def tearDown(self) -> None:
         pass
