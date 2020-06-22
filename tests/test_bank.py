@@ -46,10 +46,10 @@ class TestWithdraw(unittest.TestCase):
         self.app = bank.Withdraw(test_amount)
 
     def test_withdraw_input_is_integer(self):
-        self.assertIs(self.amount, int)
+        self.assertIs(self.test_amount, int)
 
     def test_withdraw_negative_amount(self):
-        self.assertLessEqual(self.amount, 0)
+        self.assertLessEqual(self.test_amount, 0)
 
     def tearDown(self) -> None:
         pass
