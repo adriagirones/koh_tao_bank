@@ -11,5 +11,13 @@ class Command:
         pass
 
 
+class Invoker:
+    """
+
+    """
+    def __init__(self,command):
+        self.command = command
+
+
 if __name__ == '__main__':
     pass
