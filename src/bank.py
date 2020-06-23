@@ -52,7 +52,7 @@ class Withdraw(Command):
         self.amount = amount
 
     def execute(self) -> None:
-        pass
+        self.receiver.withdraw(self.amount)
 
 
 class Deposit(Command):
