@@ -47,6 +47,10 @@ class Withdraw(Command):
         Let the user withdraw some amount
     """
 
+    def __init__(self, receiver, amount):
+        self.receiver = receiver
+        self.amount = amount
+
     def execute(self) -> None:
         pass
 
