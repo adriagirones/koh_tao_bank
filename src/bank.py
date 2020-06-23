@@ -60,7 +60,7 @@ class Withdraw(Command):
         Let the user withdraw some amount
     """
 
-    def __init__(self, receiver, amount):
+    def __init__(self, receiver: Receiver, amount: float):
         self.receiver = receiver
         self.amount = amount
 
