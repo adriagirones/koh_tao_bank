@@ -25,6 +25,13 @@ class TestInvoker(unittest.TestCase):
         pass
 
 
+class TestReceiver(unittest.TestCase):
+    def setUp(self) -> None:
+        pass
+
+    def tearDown(self) -> None:
+        pass
+
 class TestBalance(unittest.TestCase):
     def test_balance_execute(self):
         self.assertEqual(bank.Balance(), 0)
