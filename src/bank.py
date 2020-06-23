@@ -23,25 +23,24 @@ class Invoker:
         self.command.execute()
 
 
-class Receiver():
+class Receiver:
     """
         This class will hold state
     """
 
     def __init__(self, *a, **kw):
         self.name = kw.get('name') if kw.get('name') else ''
-        self.amount = kw.get('amount') if kw.get('amount') else 0
+        self.amount = kw.get('amount') if kw.get('amount') else 0.0
 
-    def deposit(self, quantity):
+    def deposit(self, quantity: float):
         self.amount += quantity
 
     def balance(self):
         return self.amount
 
-    def withdraw(self, quantity):
+    def withdraw(self, quantity: float):
         if self.amount - quantity > 0:
             self.amount -= quantity
-
 
 
 class Balance(Command):
