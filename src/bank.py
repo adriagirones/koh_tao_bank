@@ -16,10 +16,10 @@ class Invoker:
         Class that execute any command you send through
     """
 
-    def __init__(self, command):
+    def __init__(self, command: Command):
         self.command = command
 
-    def run(self):
+    def run(self) -> None:
         self.command.execute()
 
 
@@ -32,13 +32,29 @@ class Receiver:
         self.name = kwargs.get('name') if kwargs.get('name') else ''
         self.amount = round(kwargs.get('amount'), 2) if kwargs.get('amount') else 0.00
 
-    def deposit(self, quantity: float):
+    def deposit(self, quantity: float) -> None:
+        """
+        Add money to the account
+
+        :param
+        quantity: float
+        """
         self.amount += round(quantity, 2)
 
-    def balance(self):
+    def balance(self) -> float:
+        """
+        Send back the total amount in the bank account
+        :return: self.amount: float
+        """
         return self.amount
 
-    def withdraw(self, quantity: float):
+    def withdraw(self, quantity: float) -> None:
+        """
+        Remove money to the account
+
+        :param
+        quantity: float
+        """
         if self.amount - round(quantity, 2) > 0:
             self.amount -= round(quantity, 2)
 
