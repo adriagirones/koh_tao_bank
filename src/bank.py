@@ -30,15 +30,15 @@ class Receiver:
 
     def __init__(self, *a, **kw):
         self.name = kw.get('name') if kw.get('name') else ''
-        self.amount = kw.get('amount') if kw.get('amount') else 0
+        self.amount = kw.get('amount') if kw.get('amount') else 0.0
 
-    def deposit(self, quantity):
+    def deposit(self, quantity: float):
         self.amount += quantity
 
     def balance(self):
         return self.amount
 
-    def withdraw(self, quantity):
+    def withdraw(self, quantity: float):
         if self.amount - quantity > 0:
             self.amount -= quantity
 
@@ -60,7 +60,7 @@ class Withdraw(Command):
         Let the user withdraw some amount
     """
 
-    def __init__(self, receiver, amount):
+    def __init__(self, receiver: Receiver, amount: float):
         self.receiver = receiver
         self.amount = amount
 
@@ -73,7 +73,7 @@ class Deposit(Command):
         Let the user deposit an amount to it's account
     """
 
-    def __init__(self, receiver, amount):
+    def __init__(self, receiver: Receiver, amount: float):
         self.receiver = receiver
         self.amount = amount
 
