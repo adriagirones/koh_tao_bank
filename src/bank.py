@@ -22,21 +22,21 @@ class Invoker:
     def run(self):
         self.command.execute()
 
+
 class Receiver():
     """
         This class will hold state
     """
+
     def __init__(self, *a, **kw):
         self.name = kw.get('name') if kw.get('name') else ''
         self.amount = kw.get('amount') if kw.get('amount') else 0
-
 
 
 class Balance(Command):
     """
         Check amount on a bank account
     """
-
 
     def execute(self) -> None:
         pass
@@ -55,6 +55,11 @@ class Deposit(Command):
     """
         Let the user deposit an amount to it's account
     """
+
+    def __init__(self, receiver, amount):
+        self.receiver = receiver
+        self.amount = amount
+
 
     def execute(self) -> None:
         pass
