@@ -35,6 +35,9 @@ class Receiver():
     def deposit(self, quantity):
         self.amount += quantity
 
+    def balance(self):
+        return self.amount
+
 
 class Balance(Command):
     """
