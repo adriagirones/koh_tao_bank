@@ -38,6 +38,11 @@ class Receiver():
     def balance(self):
         return self.amount
 
+    def withdraw(self, quantity):
+        if self.amount - quantity > 0:
+            self.amount -= quantity
+
+
 
 class Balance(Command):
     """
