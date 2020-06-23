@@ -41,9 +41,8 @@ class Balance(Command):
     def __init__(self, receiver):
         self.receiver = receiver
 
-
     def execute(self) -> None:
-        pass
+        self.receiver.balance()
 
 
 class Withdraw(Command):
@@ -70,7 +69,6 @@ class Deposit(Command):
 
     def execute(self) -> None:
         self.receiver.deposit(self.amount)
-
 
 
 if __name__ == '__main__':
