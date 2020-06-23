@@ -13,10 +13,14 @@ class Command:
 
 class Invoker:
     """
-
+        Class that execute any command you send through
     """
-    def __init__(self,command):
+
+    def __init__(self, command):
         self.command = command
+
+    def run(self):
+        self.command.run()
 
 
 if __name__ == '__main__':
