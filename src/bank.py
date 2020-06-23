@@ -73,7 +73,7 @@ class Deposit(Command):
         Let the user deposit an amount to it's account
     """
 
-    def __init__(self, receiver, amount):
+    def __init__(self, receiver: Receiver, amount: float):
         self.receiver = receiver
         self.amount = amount
 
