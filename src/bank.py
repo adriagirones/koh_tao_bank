@@ -20,7 +20,7 @@ class Invoker:
         self.command = command
 
     def run(self):
-        self.command.run()
+        self.command.execute()
 
 
 class Balance(Command):
@@ -31,6 +31,7 @@ class Balance(Command):
     def execute(self) -> None:
         pass
 
+
 class Withdraw(Command):
     """
         Let the user withdraw some amount
@@ -38,6 +39,7 @@ class Withdraw(Command):
 
     def execute(self) -> None:
         pass
+
 
 class Deposit(Command):
     """
