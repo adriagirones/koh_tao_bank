@@ -39,7 +39,8 @@ class Receiver:
         :param
         quantity: float
         """
-        self.amount += round(quantity, 2)
+        if isinstance(quantity, float) and quantity > 0:
+            self.amount += round(quantity, 2)
 
     def balance(self) -> float:
         """
@@ -55,8 +56,9 @@ class Receiver:
         :param
         quantity: float
         """
-        if self.amount - round(quantity, 2) > 0:
-            self.amount -= round(quantity, 2)
+        if isinstance(quantity, float) and quantity > 0:
+            if self.amount - round(quantity, 2) > 0:
+                self.amount -= round(quantity, 2)
 
 
 class Balance(Command):
