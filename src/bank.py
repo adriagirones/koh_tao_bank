@@ -32,6 +32,9 @@ class Receiver():
         self.name = kw.get('name') if kw.get('name') else ''
         self.amount = kw.get('amount') if kw.get('amount') else 0
 
+    def deposit(self, quantity):
+        self.amount += quantity
+
 
 class Balance(Command):
     """
