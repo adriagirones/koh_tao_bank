@@ -23,7 +23,7 @@ class Invoker:
         self.command.execute()
 
 
-class Receiver():
+class Receiver:
     """
         This class will hold state
     """
@@ -43,13 +43,12 @@ class Receiver():
             self.amount -= quantity
 
 
-
 class Balance(Command):
     """
         Check amount on a bank account
     """
 
-    def __init__(self, receiver):
+    def __init__(self, receiver: Receiver):
         self.receiver = receiver
 
     def execute(self) -> None:
