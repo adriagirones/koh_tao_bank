@@ -28,19 +28,19 @@ class Receiver:
         This class will hold state
     """
 
-    def __init__(self, *a, **kw):
-        self.name = kw.get('name') if kw.get('name') else ''
-        self.amount = kw.get('amount') if kw.get('amount') else 0.0
+    def __init__(self, *args, **kwargs):
+        self.name = kwargs.get('name') if kwargs.get('name') else ''
+        self.amount = round(kwargs.get('amount'), 2) if kwargs.get('amount') else 0.00
 
     def deposit(self, quantity: float):
-        self.amount += quantity
+        self.amount += round(quantity, 2)
 
     def balance(self):
         return self.amount
 
     def withdraw(self, quantity: float):
-        if self.amount - quantity > 0:
-            self.amount -= quantity
+        if self.amount - round(quantity, 2) > 0:
+            self.amount -= round(quantity, 2)
 
 
 class Balance(Command):
