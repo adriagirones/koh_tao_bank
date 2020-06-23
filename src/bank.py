@@ -31,6 +31,14 @@ class Balance(Command):
     def execute(self) -> None:
         pass
 
+class Withdraw(Command):
+    """
+        Let the user withdraw some amount
+    """
+
+    def execute(self) -> None:
+        pass
+
 
 if __name__ == '__main__':
     pass
