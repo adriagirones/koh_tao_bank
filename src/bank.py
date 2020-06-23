@@ -38,6 +38,10 @@ class Balance(Command):
         Check amount on a bank account
     """
 
+    def __init__(self, receiver):
+        self.receiver = receiver
+
+
     def execute(self) -> None:
         pass
 
