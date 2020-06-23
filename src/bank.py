@@ -60,9 +60,9 @@ class Deposit(Command):
         self.receiver = receiver
         self.amount = amount
 
-
     def execute(self) -> None:
-        pass
+        self.receiver.deposit(self.amount)
+
 
 
 if __name__ == '__main__':
