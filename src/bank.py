@@ -39,6 +39,14 @@ class Withdraw(Command):
     def execute(self) -> None:
         pass
 
+class Deposit(Command):
+    """
+        Let the user deposit an amount to it's account
+    """
+
+    def execute(self) -> None:
+        pass
+
 
 if __name__ == '__main__':
     pass
