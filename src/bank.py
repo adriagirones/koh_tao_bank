@@ -23,5 +23,14 @@ class Invoker:
         self.command.run()
 
 
+class Balance(Command):
+    """
+        Check amount on a bank account
+    """
+
+    def execute(self) -> None:
+        pass
+
+
 if __name__ == '__main__':
     pass
