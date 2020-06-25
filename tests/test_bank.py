@@ -28,10 +28,14 @@ class TestInvoker(unittest.TestCase):
 
 class TestReceiver(unittest.TestCase):
     def setUp(self) -> None:
-        pass
+        self.eceiver = bank.Receiver(name="adria", amount=50)
+
+    def test_receiver_has_attribute_name(self):
+        self.assertTrue(hasattr(self.receiver, 'name'))
 
     def tearDown(self) -> None:
         pass
+
 
 class TestBalance(unittest.TestCase):
     def test_balance_execute(self):
