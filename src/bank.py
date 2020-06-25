@@ -86,7 +86,7 @@ class Balance(Command):
         self.receiver = receiver
 
     def execute(self) -> None:
-        self.receiver.balance()
+        return self.receiver.balance()
 
 
 class Withdraw(Command):
