@@ -134,18 +134,21 @@ class TestDeposit(unittest.TestCase):
         self.receiver = bank.Receiver(name="adria", amount=50)
         self.command = bank.Deposit(self.receiver, 30.0)
 
-    def test_balance_execute(self):
+    def test_deposit_execute(self):
         self.command.execute()
         self.assertEqual(self.receiver.amount, 80.0)
 
-    def test_balance_has_attribute_receiver(self):
+    def test_deposit_has_attribute_receiver(self):
         self.assertTrue(hasattr(self.command, "receiver"))
 
-    def test_balance_has_attribute_amount(self):
+    def test_deposit_has_attribute_amount(self):
         self.assertTrue(hasattr(self.command, "amount"))
 
-    def test_balance_attribute_receiver_is_type_Receiver(self):
+    def test_deposit_attribute_receiver_type(self):
         self.assertIs(type(self.command.receiver), bank.Receiver)
+
+    def test_deposit_attribute_amount_type(self):
+        self.assertTrue(type(self.command.amount) is float)
 
     def tearDown(self) -> None:
         pass
