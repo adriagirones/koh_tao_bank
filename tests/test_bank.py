@@ -93,9 +93,11 @@ class TestBalance(unittest.TestCase):
     def test_balance_execute(self):
         self.assertEqual(self.command.execute(), 50.0)
 
-    def test_balance_argument_error(self):
-        with self.assertRaises(IOError):
-            bank.Balance(150)
+    def test_balance_has_attribute_receiver(self):
+        self.assertTrue(hasattr(self.command, "receiver"))
+
+    def test_balance_attribute_receiver_is_type_Receiver(self):
+        self.assertIs(type(self.command.receiver), bank.Receiver)
 
 
 class TestDeposit(unittest.TestCase):
