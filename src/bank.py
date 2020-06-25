@@ -117,7 +117,3 @@ class Deposit(Command):
 
     def execute(self) -> None:
         self.receiver.deposit(self.amount)
-
-
-if __name__ == '__main__':
-    pass
