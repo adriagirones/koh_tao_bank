@@ -64,6 +64,10 @@ class TestReceiver(unittest.TestCase):
         self.receiver.withdraw(30.00)
         self.assertEqual(self.receiver.amount, 20)
 
+    def test_receiver_withdraw_negative_amount(self):
+        with self.assertRaises(ValueError):
+            self.receiver.withdraw(-3)
+
 
 
     def tearDown(self) -> None:
