@@ -86,8 +86,12 @@ class TestReceiver(unittest.TestCase):
 
 
 class TestBalance(unittest.TestCase):
+    def setUp(self) -> None:
+        receiver = bank.Receiver(name="adria", amount=50)
+        self.command = bank.Balance(receiver)
+
     def test_balance_execute(self):
-        self.assertEqual(bank.Balance(), 0)
+        self.assertEqual(self.command.execute(), 50.0)
 
     def test_balance_argument_error(self):
         with self.assertRaises(IOError):
