@@ -15,11 +15,12 @@ class TestInvoker(unittest.TestCase):
     def test_invoker_init_command_parameter_type_check(self):
         for command in self.commands:
             invoker = bank.Invoker(command)
-            self.assertIsInstance(invoker.command, command)
-            # self.assertTrue(invoker.command is command)
+            self.assertTrue(invoker.command is command)
 
     def test_invoker_run(self):
-        self.assertIsNone(bank.Invoker.run(self))
+        receiver = bank.Receiver(name='adria', amount=50)
+        invoker = bank.Invoker(bank.Balance(receiver))
+        self.assertIsNone(invoker.run())
 
     def tearDown(self) -> None:
         pass
