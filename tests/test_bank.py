@@ -60,6 +60,12 @@ class TestReceiver(unittest.TestCase):
     def test_receiver_balance_return_type(self):
         self.assertTrue(type(self.receiver.amount) is float)
 
+    def test_receiver_withdraw(self):
+        self.receiver.withdraw(30.00)
+        self.assertEqual(self.receiver.amount, 20)
+
+
+
     def tearDown(self) -> None:
         pass
 
