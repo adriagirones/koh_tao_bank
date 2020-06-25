@@ -42,6 +42,10 @@ class TestReceiver(unittest.TestCase):
     def test_receiver_attribute_amount_is_type_string(self):
         self.assertIs(type(self.receiver.amount), int)
 
+    def test_receiver_deposit(self):
+        self.receiver.deposit(30.00)
+        self.assertEqual(self.receiver.amount, 80)
+
     def tearDown(self) -> None:
         pass
 
