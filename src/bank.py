@@ -48,6 +48,8 @@ class Receiver:
         """
         if isinstance(quantity, float) and quantity > 0:
             self.amount += float(round(quantity, 2))
+        else:
+            raise ValueError("Please deposit a correct amount.")
 
     def balance(self) -> float:
         """
