@@ -68,7 +68,7 @@ class TestReceiver(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.receiver.withdraw(-3)
 
-    def test_receiver_deposit_wrong_amount_type(self):
+    def test_receiver_withdraw_wrong_amount_type(self):
         with self.assertRaises(ValueError):
             self.receiver.withdraw("a")
 
