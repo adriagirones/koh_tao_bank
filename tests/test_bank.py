@@ -46,6 +46,11 @@ class TestReceiver(unittest.TestCase):
         self.receiver.deposit(30.00)
         self.assertEqual(self.receiver.amount, 80)
 
+    def test_receiver_deposit_negative_amount(self):
+        with self.assertRaises(ValueError):
+            self.receiver.deposit(-3)
+
+
     def tearDown(self) -> None:
         pass
 
