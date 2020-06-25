@@ -105,25 +105,24 @@ class TestBalance(unittest.TestCase):
 
 class TestWithdraw(unittest.TestCase):
     def setUp(self) -> None:
-        self.balance = 20
-        self.test_amount = -30
-        self.app = bank.Withdraw(self.test_amount)
+        self.receiver = bank.Receiver(name="adria", amount=50)
+        self.command = bank.Withdraw(self.receiver, 30.0)
 
     def test_withdraw_execute(self):
-        self.assertEquals(bank.Withdraw(self.test_amount), self.balance - self.test_amount)
+        self.command.execute()
+        self.assertEqual(self.receiver.amount, 20.0)
 
-    def test_withdraw_input_is_integer(self):
-        self.assertIs(self.test_amount, int)
+    def test_withdraw_has_attribute_receiver(self):
+        self.assertTrue(hasattr(self.command, "receiver"))
 
-    def test_withdraw_negative_amount(self):
-        self.assertLessEqual(self.test_amount, 0)
+    def test_withdraw_has_attribute_amount(self):
+        self.assertTrue(hasattr(self.command, "amount"))
 
-    def test_withdraw_argument_error(self):
-        with self.assertRaises(IOError):
-            bank.Withdraw()
+    def test_withdraw_attribute_receiver_type(self):
+        self.assertIs(type(self.command.receiver), bank.Receiver)
 
-    def test_withdraw_amount_exceeds_balance(self):
-        self.assertLess(self.test_amount, self.balance)
+    def test_withdraw_attribute_amount_type(self):
+        self.assertTrue(type(self.command.amount) is float)
 
     def tearDown(self) -> None:
         pass
