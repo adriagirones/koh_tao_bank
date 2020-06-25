@@ -37,7 +37,7 @@ class Receiver:
 
     def __init__(self, *args, **kwargs):
         self.name = kwargs.get('name') if kwargs.get('name') else ''
-        self.amount = round(kwargs.get('amount'), 2) if kwargs.get('amount') else 0.00
+        self.amount = round(float(kwargs.get('amount')), 2) if kwargs.get('amount') else 0.0
 
     def deposit(self, quantity: float) -> None:
         """
