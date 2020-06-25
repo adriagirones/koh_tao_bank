@@ -99,25 +99,6 @@ class TestBalance(unittest.TestCase):
     def test_balance_attribute_receiver_is_type_Receiver(self):
         self.assertIs(type(self.command.receiver), bank.Receiver)
 
-
-class TestDeposit(unittest.TestCase):
-    def setUp(self) -> None:
-        self.balance = 30
-        self.test_amount = 30
-
-    def test_deposit_execute(self):
-        self.assertEquals(bank.Deposit(self.test_amount), sum([self.balance, self.test_amount]))
-
-    def test_deposit_input_is_integer(self):
-        self.assertIs(self.test_amount, int)
-
-    def test_deposit_negative_amount(self):
-        self.assertLessEqual(self.test_amount * -1, 0)
-
-    def test_deposit_argument_error(self):
-        with self.assertRaises(IOError):
-            bank.Deposit()
-
     def tearDown(self) -> None:
         pass
 
@@ -143,6 +124,26 @@ class TestWithdraw(unittest.TestCase):
 
     def test_withdraw_amount_exceeds_balance(self):
         self.assertLess(self.test_amount, self.balance)
+
+    def tearDown(self) -> None:
+        pass
+
+
+class TestDeposit(unittest.TestCase):
+    def setUp(self) -> None:
+        self.receiver = bank.Receiver(name="adria", amount=50)
+        self.command = bank.Deposit(self.receiver, 30.0)
+
+    def test_balance_execute(self):
+        self.command.execute()
+        self.assertEqual(self.receiver.amount, 80.0)
+
+    def test_balance_has_attribute_receiver(self):
+        self.assertTrue(hasattr(self.command, "receiver"))
+
+
+    def test_balance_attribute_receiver_is_type_Receiver(self):
+        self.assertIs(type(self.command.receiver), bank.Receiver)
 
     def tearDown(self) -> None:
         pass
