@@ -33,6 +33,9 @@ class TestReceiver(unittest.TestCase):
     def test_receiver_has_attribute_name(self):
         self.assertTrue(hasattr(self.receiver, 'name'))
 
+    def test_receiver_has_attribute_amount(self):
+        self.assertTrue(hasattr(self.receiver, 'amount'))
+
     def tearDown(self) -> None:
         pass
 
