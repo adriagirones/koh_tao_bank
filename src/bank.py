@@ -47,7 +47,7 @@ class Receiver:
         quantity: float
         """
         if isinstance(quantity, float) and quantity > 0:
-            self.amount += round(quantity, 2)
+            self.amount += float(round(quantity, 2))
 
     def balance(self) -> float:
         """
