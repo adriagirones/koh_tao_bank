@@ -50,6 +50,9 @@ class TestReceiver(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.receiver.deposit(-3)
 
+    def test_receiver_deposit_wrong_amount_type(self):
+        with self.assertRaises(ValueError):
+            self.receiver.deposit("a")
 
     def tearDown(self) -> None:
         pass
