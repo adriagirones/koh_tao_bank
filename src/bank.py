@@ -13,7 +13,7 @@ class Command:
 
 class Invoker:
     """
-        Class that execute any command you send through
+Class that execute any command you send through
     """
 
     def __init__(self, command: Command):
@@ -61,7 +61,7 @@ class Receiver:
 
 class Balance(Command):
     """
-        Check amount on a bank account
+    Check amount on a bank account
     """
 
     def __init__(self, receiver: Receiver):
@@ -73,7 +73,7 @@ class Balance(Command):
 
 class Withdraw(Command):
     """
-        Let the user withdraw some amount
+    Let the user withdraw some amount
     """
 
     def __init__(self, receiver: Receiver, amount: float):
@@ -86,7 +86,7 @@ class Withdraw(Command):
 
 class Deposit(Command):
     """
-        Let the user deposit an amount to it's account
+    Let the user deposit an amount to it's account
     """
 
     def __init__(self, receiver: Receiver, amount: float):
