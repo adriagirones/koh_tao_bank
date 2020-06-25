@@ -141,6 +141,8 @@ class TestDeposit(unittest.TestCase):
     def test_balance_has_attribute_receiver(self):
         self.assertTrue(hasattr(self.command, "receiver"))
 
+    def test_balance_has_attribute_amount(self):
+        self.assertTrue(hasattr(self.command, "amount"))
 
     def test_balance_attribute_receiver_is_type_Receiver(self):
         self.assertIs(type(self.command.receiver), bank.Receiver)
