@@ -69,7 +69,8 @@ class Receiver:
         """
         if isinstance(quantity, float) and quantity > 0:
             if self.amount - round(quantity, 2) > 0:
-                self.amount -= round(quantity, 2)
+                self.amount -= float(round(quantity, 2))
+
 
 
 class Balance(Command):
