@@ -57,6 +57,9 @@ class TestReceiver(unittest.TestCase):
     def test_receiver_balance(self):
         self.assertEquals(self.receiver.amount, 50.00)
 
+    def test_receiver_balance_return_type(self):
+        self.assertTrue(type(self.receiver.amount) is float)
+
     def tearDown(self) -> None:
         pass
 
