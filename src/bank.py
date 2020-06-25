@@ -13,9 +13,10 @@ class Command:
 
 class Invoker:
     """
-        Class that execute any command you send through
-        :param
-        command: Command
+    Class that execute any command you send through
+
+    :param
+    command: Command
     """
 
     def __init__(self, command: Command):
@@ -27,10 +28,11 @@ class Invoker:
 
 class Receiver:
     """
-        This class will hold state
-        :param
-        name: str
-        amount: float
+    This class will hold state
+
+    :param
+    name: str
+    amount: float
     """
 
     def __init__(self, *args, **kwargs):
@@ -50,7 +52,9 @@ class Receiver:
     def balance(self) -> float:
         """
         Send back the total amount in the bank account
-        :return: self.amount: float
+
+        :return:
+        self.amount: float
         """
         return self.amount
 
@@ -68,10 +72,10 @@ class Receiver:
 
 class Balance(Command):
     """
-        Check amount on a bank account
+    Check amount on a bank account
 
-        :param
-        receiver: Receiver
+    :param
+    receiver: Receiver
     """
 
     def __init__(self, receiver: Receiver):
@@ -83,11 +87,11 @@ class Balance(Command):
 
 class Withdraw(Command):
     """
-        Let the user withdraw some amount
+    Let the user withdraw some amount
 
-        :param
-        receiver : Receiver
-        amount: float
+    :param
+    receiver : Receiver
+    amount: float
     """
 
     def __init__(self, receiver: Receiver, amount: float):
@@ -100,11 +104,11 @@ class Withdraw(Command):
 
 class Deposit(Command):
     """
-        Let the user deposit an amount to it's account
+    Let the user deposit an amount to it's account
 
-        :param
-        receiver: Receiver
-        amount : float
+    :param
+    receiver: Receiver
+    amount : float
     """
 
     def __init__(self, receiver: Receiver, amount: float):
