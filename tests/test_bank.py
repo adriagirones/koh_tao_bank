@@ -28,13 +28,19 @@ class TestInvoker(unittest.TestCase):
 
 class TestReceiver(unittest.TestCase):
     def setUp(self) -> None:
-        self.eceiver = bank.Receiver(name="adria", amount=50)
+        self.receiver = bank.Receiver(name="adria", amount=50)
 
     def test_receiver_has_attribute_name(self):
         self.assertTrue(hasattr(self.receiver, 'name'))
 
     def test_receiver_has_attribute_amount(self):
         self.assertTrue(hasattr(self.receiver, 'amount'))
+
+    def test_receiver_attribute_name_is_type_string(self):
+        self.assertIs(type(self.receiver.name), str)
+
+    def test_receiver_attribute_amount_is_type_string(self):
+        self.assertIs(type(self.receiver.amount), int)
 
     def tearDown(self) -> None:
         pass
