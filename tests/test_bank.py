@@ -57,6 +57,9 @@ class TestReceiver(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.receiver.deposit("a")
 
+    def test_receiver_has_method_balance(self):
+        self.assertTrue(callable(self.receiver.balance))
+
     def test_receiver_balance(self):
         self.assertEquals(self.receiver.amount, 50.00)
 
